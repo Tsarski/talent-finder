@@ -24,7 +24,7 @@ public class Picture {
 
     @ManyToOne
     @JoinColumn(name = "service_id")
-    private Service service;
+    private BusinessService service;
 
     @OneToOne(mappedBy = "picture")
     private User user;

@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "service")
-public class Service {
+public class BusinessService {
     @Id
     private Long id;
 
@@ -29,7 +29,7 @@ public class Service {
 
     @ManyToOne
     @JoinColumn(name = "category_id")
-    private Category category;
+    private ServiceCategory category;
 
     @ManyToOne
     @JoinColumn(name = "user_id")

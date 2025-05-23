@@ -54,7 +54,7 @@ public class User {
     private boolean active;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<Service> services;
+    private List<BusinessService> services;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_picture_id")

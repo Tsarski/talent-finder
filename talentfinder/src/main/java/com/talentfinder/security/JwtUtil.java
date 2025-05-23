@@ -32,10 +32,10 @@ public class JwtUtil {
     }
 
     private String createToken(Map<String, Object> claims, String username) {
-        return Jwts.builder().addClaims(claims)
-                .setSubject(username)
-                .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + tokenLifespan))
+        return Jwts.builder().claims(claims)
+                .subject(username)
+                .issuedAt(new Date(System.currentTimeMillis()))
+                .expiration(new Date(System.currentTimeMillis() + tokenLifespan))
                 .signWith(getSigningKey())
                 .compact();
     }

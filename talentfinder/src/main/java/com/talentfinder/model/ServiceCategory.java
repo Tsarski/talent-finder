@@ -15,7 +15,7 @@ import java.util.List;
 @Setter
 @Entity
 @Table(name = "category")
-public class Category {
+public class ServiceCategory {
 
     @Id
     private int id;
@@ -24,5 +24,5 @@ public class Category {
     private String name;
 
     @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
-    private List<Service> services;
+    private List<BusinessService> services;
 }
