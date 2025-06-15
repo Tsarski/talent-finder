@@ -15,6 +15,8 @@ import java.util.List;
 public class BusinessServiceDto {
     private Long id;
 
+    private String title;
+
     private String description;
 
     private Double price;
@@ -32,7 +34,7 @@ public class BusinessServiceDto {
         List<String> videos = service.getVideos().stream().map(Video::getUrl).toList();
         String serviceCategory = service.getCategory() != null ? service.getCategory().getName() : null;
         PublicUserDataDto user = new PublicUserDataDto(service.getUser());
-        return new BusinessServiceDto(service.getId(), service.getDescription(), service.getPrice(),
+        return new BusinessServiceDto(service.getId(), service.getTitle(), service.getDescription(), service.getPrice(),
                 serviceCategory, user, pictures, videos);
     }
 }

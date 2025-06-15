@@ -1,6 +1,7 @@
 package com.talentfinder.service.impl;
 
 import com.talentfinder.dto.BusinessServiceDto;
+import com.talentfinder.dto.BusinessServicePreviewDto;
 import com.talentfinder.model.BusinessService;
 import com.talentfinder.repository.ServiceRepository;
 import com.talentfinder.service.BusinessServiceService;
@@ -21,8 +22,8 @@ public class BusinessServiceServiceImpl implements BusinessServiceService {
     }
 
     @Override
-    public List<BusinessServiceDto> getAllBusinessServices() {
+    public List<BusinessServicePreviewDto> getAllBusinessServices() {
         List<BusinessService> services = serviceRepository.findAll();
-        return services.stream().map(BusinessServiceDto::fromEntity).toList();
+        return services.stream().map(BusinessServicePreviewDto::fromEntity).toList();
     }
 }
