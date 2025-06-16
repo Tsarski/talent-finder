@@ -52,6 +52,13 @@ public class BusinessServiceServiceImpl implements BusinessServiceService {
         if (filterDto.getCategoryName() != null) {
             services = filterByCategory(services, filterDto);
         }
+        if (filterDto.getMinPrice() != null && filterDto.getMinPrice() > 0) {
+            services = filterByMinPrice(services, filterDto);
+        }
+        if (filterDto.getMaxPrice() != null && filterDto.getMaxPrice() > 0) {
+            services = filterByMaxPrice(services, filterDto);
+        }
+
         return services.stream().map(BusinessServicePreviewDto::fromEntity).toList();
     }
 
@@ -71,5 +78,13 @@ public class BusinessServiceServiceImpl implements BusinessServiceService {
         return services.stream()
                 .filter(s -> Objects.equals(s.getLocation().getLocationName(), filterDto.getLocation()))
                 .toList();
+    }
+
+    private List<BusinessService> filterByMaxPrice(List<BusinessService> services, FilterDto filterDto) {
+        return services.stream().filter(s -> s.getPrice() <= filterDto.getMaxPrice()).toList();
+    }
+
+    private List<BusinessService> filterByMinPrice(List<BusinessService> services, FilterDto filterDto) {
+        return services.stream().filter(s -> s.getPrice() >= filterDto.getMinPrice()).toList();
     }
 }

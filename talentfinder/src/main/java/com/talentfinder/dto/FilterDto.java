@@ -10,4 +10,6 @@ public class FilterDto {
     private String location;
     private String username;
     private String serviceName;
+    private Integer maxPrice;
+    private Integer minPrice;
 }
