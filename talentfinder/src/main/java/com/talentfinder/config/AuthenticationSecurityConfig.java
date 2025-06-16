@@ -41,6 +41,7 @@ public class AuthenticationSecurityConfig {
                                 .requestMatchers("/h2-console/**").permitAll()
                                 .requestMatchers("/api/services/**").permitAll()
                                 .requestMatchers("/api/images/**").permitAll()
+                                .requestMatchers("/api/metadata/**").permitAll()
                                 .anyRequest()
                                 .authenticated()
                 )

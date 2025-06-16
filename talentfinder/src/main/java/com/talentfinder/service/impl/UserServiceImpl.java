@@ -5,7 +5,6 @@ import com.talentfinder.model.User;
 import com.talentfinder.repository.UserRepository;
 import com.talentfinder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
