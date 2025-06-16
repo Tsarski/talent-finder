@@ -39,7 +39,7 @@ public class AuthenticationSecurityConfig {
                 .authorizeHttpRequests(requests ->
                         requests.requestMatchers("/api/auth/**").permitAll()
                                 .requestMatchers("/h2-console/**").permitAll()
-                                .requestMatchers("/api/services/getAll").permitAll()
+                                .requestMatchers("/api/services/**").permitAll()
                                 .requestMatchers("/api/images/**").permitAll()
                                 .anyRequest()
                                 .authenticated()

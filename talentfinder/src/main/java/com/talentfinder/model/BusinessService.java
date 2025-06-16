@@ -38,9 +38,16 @@ public class BusinessService {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @ManyToOne
+    @JoinColumn(name = "location_id")
+    private Location location;
+
     @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
     private List<Picture> pictures;
 
     @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
     private List<Video> videos;
+
+    @OneToMany(mappedBy = "service", cascade = CascadeType.ALL)
+    private List<Review> reviews;
 }

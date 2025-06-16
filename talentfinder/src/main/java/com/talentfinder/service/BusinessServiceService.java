@@ -6,5 +6,6 @@ import com.talentfinder.dto.BusinessServicePreviewDto;
 import java.util.List;
 
 public interface BusinessServiceService {
-    public List<BusinessServicePreviewDto> getAllBusinessServices();
+    List<BusinessServicePreviewDto> getAllBusinessServices();
+    BusinessServiceDto getBusinessServiceById(Long id);
 }

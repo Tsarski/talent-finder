@@ -61,6 +61,9 @@ public class User {
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
     private List<BusinessService> services;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.DETACH)
+    private List<Review> reviews;
+
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "profile_picture_id")
     private Picture picture;
