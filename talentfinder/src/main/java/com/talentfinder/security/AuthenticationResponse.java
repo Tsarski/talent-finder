@@ -6,5 +6,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class AuthenticationResponse {
-    final private String jwt;
+    private final String jwt;
+    private final String username;
 }

@@ -28,7 +28,7 @@ public class MetadataController {
     }
 
     @GetMapping("/locations")
-    public ResponseEntity<List<LocationDto>> getAllLocations(){
+    public ResponseEntity<List<LocationDto>> getAllLocations() {
         return ResponseEntity.ok(metadataService.getAllLocations());
     }
 

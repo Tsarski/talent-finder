@@ -24,8 +24,12 @@ public class UserServiceImpl implements UserService {
         this.passwordEncoder = passwordEncoder;
     }
 
-    public Optional<User> getUserByUsername(String username) {
-        return userRepository.findByUsername(username);
+    public Optional<UserProfileDto> getUserByUsername(String username) {
+        Optional<User> user = userRepository.findByUsername(username);
+        if (user.isPresent()) {
+            Optional.of(UserProfileDto.fromEntity(user.get()));
+        }
+        return Optional.empty();
     }
 
     @Override
